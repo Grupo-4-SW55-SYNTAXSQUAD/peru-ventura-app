@@ -2,11 +2,10 @@
   <header class="card">
     <Toolbar style="border-radius: 3rem; padding: 1rem 1rem 1rem 1.5rem">
       <template #start>
-        <div class="flex align-items-center gap-2">
-          <router-link to="/activities" class="no-underline">
-            <h1>PeruVentura</h1>
+        <nav class="flex align-items-center gap-2">
+          <router-link to="/home" class="no-underline">
+            <h1 class="text-4xl text-red-600 font-semibold">PeruVentura</h1>
           </router-link>
-
           <router-link to="home">
             <Button label="Home" text plain />
           </router-link>
@@ -22,7 +21,7 @@
           <router-link to="contact">
             <Button label="Contactos" text plain />
           </router-link>
-        </div>
+        </nav>
       </template>
       <template #end>
         <div v-if="tourist" class="flex align-items-center gap-2">

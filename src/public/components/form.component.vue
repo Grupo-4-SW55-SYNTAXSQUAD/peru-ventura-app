@@ -1,8 +1,9 @@
 <template>
-  <div
+  <form
     :class="[
       'min-h-screen p-8 flex items-center justify-center transition-all duration-200',
       gradient,
+      'p-screen',
     ]"
   >
     <div
@@ -19,18 +20,30 @@
           <i class="pi pi-user text-4xl text-white" />
         </span>
       </div>
-      <InputText placeholder="Username" />
-      <InputText placeholder="Password" />
-      <Button
-        class="bg-black/10 hover:bg-black/20 border-1 px-3 py-2 text-white transition-colors duration-300 shadow-2 rounded-full focus:outline-0 focus:bg-black/30"
-        label="Login"
-      />
+      <InputText class="py-2 px-3 rounded-full" placeholder="Usuario" />
+      <InputText class="py-2 px-3 rounded-full" placeholder="Contraseña" />
+      <router-link
+        to="/home"
+        class="bg-black/10 hover:bg-black/20 border-1 text-center px-3 py-2 text-white transition-colors duration-300 shadow-2 rounded-full focus:outline-0 focus:bg-black/30"
+      >
+        Login
+      </router-link>
     </div>
-  </div>
+  </form>
 </template>
 
+<style>
+.p-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+}
+</style>
+
 <script setup>
-// import ColorPalette from './components/ColorPalette.vue';
 import { ref } from 'vue';
 
 const gradient = ref(
