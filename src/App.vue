@@ -1,8 +1,8 @@
 <template>
   <div>
     <ToolbarComponent />
-    <main>
-      <router-view class="main" />
+    <main class="main">
+      <router-view />
     </main>
     <!-- <footer>Hola</footer> -->
   </div>

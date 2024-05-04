@@ -20,19 +20,21 @@
           <i class="pi pi-user text-4xl text-white" />
         </span>
       </div>
-      <InputText class="py-2 px-3 rounded-full" placeholder="Usuario" />
+      <InputText
+        class="py-2 px-3 rounded-full"
+        placeholder="Nombre de Usuario"
+      />
+      <InputText class="py-2 px-3 rounded-full" placeholder="Pais" />
       <InputText class="py-2 px-3 rounded-full" placeholder="Contraseña" />
+      <InputText
+        class="py-2 px-3 rounded-full"
+        placeholder="Repetir Contraseña"
+      />
       <router-link
         to="/home"
         class="bg-black/10 hover:bg-black/20 border-1 text-center px-3 py-2 text-white transition-colors duration-300 shadow-2 rounded-full focus:outline-0 focus:bg-black/30"
       >
-        Login
-      </router-link>
-      <router-link
-        to="/register"
-        class="bg-black/10 hover:bg-black/20 border-1 text-center px-3 py-2 text-white transition-colors duration-300 shadow-2 rounded-full focus:outline-0 focus:bg-black/30"
-      >
-        Registrate
+        Register
       </router-link>
     </div>
   </form>

@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import cardDetail from '../components/card-detail.vue';
+import cardDetail from '../components/card-detail.component.vue';
 
 export default {
   components: {
