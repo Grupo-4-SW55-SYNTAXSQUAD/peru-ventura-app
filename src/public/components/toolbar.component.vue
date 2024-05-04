@@ -1,5 +1,5 @@
 <template>
-  <header class="card">
+  <header class="card" :class="darkModeClass">
     <Toolbar style="border-radius: 3rem; padding: 1rem 1rem 1rem 1.5rem">
       <template #start>
         <nav class="flex align-items-center gap-2">
@@ -24,6 +24,9 @@
         </nav>
       </template>
       <template #end>
+        <div class="card flex justify-content-center mr-4">
+          <InputSwitch v-model="checked" />
+        </div>
         <div v-if="tourist" class="flex align-items-center gap-2">
           <router-link to="/profile">
             <Avatar
@@ -47,6 +50,7 @@
 <script>
 import { BaseService } from '../../shared/services/base.service';
 const service = new BaseService();
+
 export default {
   components: {},
   props: {
@@ -55,8 +59,14 @@ export default {
   data() {
     return {
       tourist: null,
-      localTouristId: null, // nueva variable de datos
+      localTouristId: null,
+      checked: false,
     };
+  },
+  computed: {
+    darkModeClass() {
+      return this.checked ? 'dark-mode' : '';
+    },
   },
   created() {
     this.localTouristId =
