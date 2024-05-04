@@ -1,3 +1,11 @@
 <template>
-  <h1>Login</h1>
+  <FormComponent />
 </template>
+<script>
+import FormComponent from '../components/form.component.vue';
+export default {
+  components: {
+    FormComponent,
+  },
+};
+</script>

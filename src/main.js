@@ -3,6 +3,9 @@ import 'primeicons/primeicons.css';
 import Avatar from 'primevue/avatar';
 import Button from 'primevue/button';
 import Card from 'primevue/card';
+
+import InputText from 'primevue/inputtext';
+
 import Carousel from 'primevue/carousel';
 import PrimeVue from 'primevue/config';
 
@@ -17,6 +20,7 @@ import './style.css';
 createApp(App)
   .component('Toolbar', Toolbar)
   .component('Carousel', Carousel)
+  .component('InputText', InputText)
   .component('Button', Button)
   .component('Card', Card)
   .component('Avatar', Avatar)
