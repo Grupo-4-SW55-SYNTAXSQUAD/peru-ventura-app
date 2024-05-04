@@ -1,26 +1,22 @@
 <template>
-  <!-- Componente de opciones (falta crear) -->
-  <!-- <CarouselComponent /> -->
-  <section class="activities py-5">
+  <section class="destinations py-5">
     <CheckListComponent />
-    <DataListComponent />
+    <ListComponent />
   </section>
 </template>
 
 <script>
-import DataListComponent from '../components/datalist.component.vue';
 import CheckListComponent from '../components/checklist.component.vue';
-
+import ListComponent from '../components/list.component.vue';
 export default {
   components: {
-    DataListComponent,
     CheckListComponent,
+    ListComponent,
   },
 };
 </script>
-
 <style scoped>
-.activities {
+.destinations {
   display: flex;
   justify-content: space-around;
 }

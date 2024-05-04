@@ -4,6 +4,7 @@ import Avatar from 'primevue/avatar';
 import Button from 'primevue/button';
 import Card from 'primevue/card';
 import Carousel from 'primevue/carousel';
+import Checkbox from 'primevue/checkbox';
 import PrimeVue from 'primevue/config';
 import DataView from 'primevue/dataview';
 import Dropdown from 'primevue/dropdown';
@@ -24,6 +25,7 @@ createApp(App)
   .component('InputSwitch', InputSwitch)
   .component('InputText', InputText)
   .component('Button', Button)
+  .component('Checkbox', Checkbox)
   .component('Card', Card)
   .component('DataView', DataView)
   .component('Avatar', Avatar)

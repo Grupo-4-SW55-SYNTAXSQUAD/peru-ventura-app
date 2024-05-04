@@ -60,10 +60,11 @@
                   </span>
                   <div class="flex flex-row-reverse md:flex-row gap-2">
                     <Button icon="pi pi-heart" outlined></Button>
-                    <Button
-                      label="Ver Detalles"
-                      class="flex-auto md:flex-initial white-space-nowrap"
-                    ></Button>
+                    <router-link
+                      :to="`/${item.id}`"
+                      class="flex-auto md:flex-initial white-space-nowrap p-2 bg-primary"
+                      >Ver Detalles</router-link
+                    >
                   </div>
                 </div>
               </div>
@@ -127,3 +128,15 @@ const onSortChange = (event) => {
   }
 };
 </script>
+
+<style>
+.p-dropdown {
+  background-color: var(--kt-black);
+  & .p-dropdown-label {
+    color: var(--kt-white);
+  }
+  & .p-dropdown-trigger {
+    color: var(--kt-white);
+  }
+}
+</style>

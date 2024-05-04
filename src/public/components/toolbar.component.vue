@@ -9,7 +9,7 @@
           <router-link to="home">
             <Button label="Home" text plain />
           </router-link>
-          <router-link to="destination">
+          <router-link to="destinations">
             <Button label="Destinos" text plain />
           </router-link>
           <router-link to="activities">
@@ -44,8 +44,6 @@
     </Toolbar>
   </header>
 </template>
-
-<style></style>
 
 <script>
 import { BaseService } from '../../shared/services/base.service';
