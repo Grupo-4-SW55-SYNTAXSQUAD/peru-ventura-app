@@ -1,14 +1,16 @@
 <template>
   <!-- Componente de opciones (falta crear) -->
-  <CarouselComponent />
+  <!-- <CarouselComponent /> -->
+  <DataListComponent />
 </template>
 
 <script>
-import CarouselComponent from '../components/carousel.component.vue';
+// import CarouselComponent from '../components/carousel.component.vue';
+import DataListComponent from '../components/datalist.component.vue';
 
 export default {
   components: {
-    CarouselComponent,
+    DataListComponent,
   },
 };
 </script>

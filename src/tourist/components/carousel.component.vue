@@ -50,7 +50,6 @@ const owners = ref([]);
 
 onMounted(() => {
   service.getAllOwners().then((res) => {
-    console.log(res);
     owners.value = res.data;
   });
 });
