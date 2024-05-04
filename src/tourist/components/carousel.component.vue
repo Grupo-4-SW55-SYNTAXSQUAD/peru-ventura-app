@@ -29,10 +29,9 @@
               <router-link
                 :to="'/' + slotProps.data.id"
                 label="Ver Detalles"
-                class="p-button p-component ml-2 no-underline"
+                class="p-button p-component ml-2 no-underline text-white"
               >
                 Ver Detalles
-                <!-- <Button label="Ver Detalles" class="ml-2" /> -->
               </router-link>
             </span>
           </div>
@@ -45,7 +44,6 @@
 <script setup>
 import { BaseService } from '../../shared/services/base.service';
 import { ref, onMounted } from 'vue';
-import Carousel from 'primevue/carousel';
 
 const service = new BaseService();
 const owners = ref([]);
