@@ -5,9 +5,10 @@ import Activities from '../tourist/pages/activities.vue';
 import ActivityDetail from '../tourist/pages/activity-detail.vue';
 import Contact from '../tourist/pages/contact/contact.vue';
 import Destinations from '../tourist/pages/destinations.vue';
-import Home from '../tourist/pages/home.vue';
+import HomeTourist from '../tourist/pages/home.vue';
 import Profile from '../tourist/pages/profile.vue';
 import Promotion from '../tourist/pages/promotions/promotion.vue';
+
 export const router = createRouter({
   history: createWebHistory(),
   routes: [
@@ -25,7 +26,7 @@ export const router = createRouter({
     },
     {
       path: '/home',
-      component: Home,
+      component: HomeTourist,
     },
     {
       path: '/activities',

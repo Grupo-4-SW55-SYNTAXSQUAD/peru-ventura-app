@@ -2,11 +2,13 @@ import axios from 'axios';
 
 const http = axios.create({
   baseURL: 'https://66347b559bb0df2359a1a40d.mockapi.io/api/v1/',
+  baseURL2: 'https://localhost:3000/api/v1/promotion'
 });
 
 export class BaseService {
   ownerEndpoint = 'owner';
   touristEndpoint = 'tourist';
+
 
   async getAllOwners() {
     try {
@@ -43,4 +45,14 @@ export class BaseService {
       throw error;
     }
   }
+
+  async getPromotionsById(id) {
+    try {
+      return await http.get(`${http.defaults.baseURL2}/promotion/${id}`);
+    } catch (error) {
+      console.error(`Error al obtener la promoción con el id ${id}:`, error);
+      throw error;
+    }
+  }
+
 }

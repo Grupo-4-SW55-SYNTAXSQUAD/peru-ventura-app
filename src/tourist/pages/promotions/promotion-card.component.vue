@@ -1,8 +1,8 @@
 <template>
   <div class="promotion-cards">
-    <Card class="promotion-card">
+    <Card class="promotion-card" v-if="promotion">
       <template #title>
-        <p>Clase de cocina peruana y mercado local en Cusco</p>
+        <p>{{ promotion.name }}</p>
       </template>
       <template #content>
         <div class="promotion-details">
@@ -11,40 +11,13 @@
               <img src="../../../assets/images/promotion.png" />
             </div>
             <div class="info-text">
-              <p><strong>Place:</strong> Cusco</p>
-              <p><strong>Time:</strong> 4 horas</p>
-              <p><strong>Offer:</strong> 2 personas x uno</p>
+              <p><strong>Place:</strong> {{ promotion.location }}</p>
+              <p><strong>Time:</strong>{{promotion.start_time }}</p>
+              <p><strong>Offer:</strong> {{ promotion.offer }}</p>
             </div>
           </div>
           <div class="promotion-actions">
             <router-link to="/3" class="bg-primary p-2">
-              Ver Detalles
-            </router-link>
-            <div class="price-box">
-              <p class="price-text">$99</p>
-            </div>
-          </div>
-        </div>
-      </template>
-    </Card>
-    <Card class="promotion-card">
-      <template #title>
-        <p>Clase de cocina peruana y mercado local en Cusco</p>
-      </template>
-      <template #content>
-        <div class="promotion-details">
-          <div class="game-info">
-            <div>
-              <img src="../../../assets/images/promotion.png" />
-            </div>
-            <div class="info-text">
-              <p><strong>Place:</strong> Cusco</p>
-              <p><strong>Time:</strong> 4 horas</p>
-              <p><strong>Offer:</strong> 2 personas x uno</p>
-            </div>
-          </div>
-          <div class="promotion-actions">
-            <router-link to="/2" class="bg-primary p-2">
               Ver Detalles
             </router-link>
             <div class="price-box">
@@ -118,4 +91,26 @@
 }
 </style>
 
-<script setup></script>
+<script>
+
+import { BaseService } from '/src/shared/services/base.service.js';
+
+const service = new BaseService();
+
+export default {
+  components: {},
+  props: {
+    promotionId: String,
+  },
+  data() {
+    return {
+      promotion: null,
+    };
+  },
+  created() {
+    service.getPromotionsById(this.promotionId).then((response) => {
+      this.promotion = response.data;
+    });
+  },
+};
+</script>

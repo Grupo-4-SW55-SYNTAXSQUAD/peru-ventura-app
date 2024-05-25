@@ -12,6 +12,10 @@
         <p>Birthdate: {{ tourist.birthday }}</p>
         <p>Country: {{ tourist.country }}</p>
       </template>
+      <!-- Añadimos un botón para la funcionalidad de promoción del taller -->
+      <template #footer>
+        <Button @click="promoteWorkshop">Promote Workshop</Button>
+      </template>
     </Card>
   </section>
 </template>
@@ -37,6 +41,12 @@ export default {
     service.getTouristById(localTouristId).then((response) => {
       this.tourist = response.data;
     });
+  },
+  methods: {
+    // Método para promocionar el taller
+    promoteWorkshop() {
+      console.log("Workshop promotion initiated!");
+    },
   },
 };
 </script>

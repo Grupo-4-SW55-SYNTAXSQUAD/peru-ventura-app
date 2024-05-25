@@ -1,0 +1,94 @@
+{
+    "promotion": [
+      {
+        "id": "1",
+        "name": "Aventura en las Montañas",
+        "description": "¡Experimenta la emoción de escalar las majestuosas montañas! Disfruta de vistas impresionantes y desafía tus límites.",
+        "community": "Explora la comunidad nativa de los Andes peruanos y descubre sus tradiciones ancestrales mientras te sumerges en la belleza de la naturaleza.",
+        "location": "Andes Peruanos",
+        "start_time": "9:00 AM",
+        "offer": "¡Reserva ahora y recibe un 15% de descuento en tu próximo viaje de aventura!"
+      },
+      {
+        "id": "2",
+        "name": "Tour Gastronómico por Lima",
+        "description": "Embárcate en un viaje culinario por la capital gastronómica de América del Sur. Deléitate con los sabores únicos de la cocina peruana.",
+        "community": "Sumérgete en la rica cultura culinaria limeña y conoce a los apasionados chefs locales que hacen de Lima un destino gastronómico de clase mundial.",
+        "location": "Lima, Perú",
+        "start_time": "11:30 AM",
+        "offer": "¡Reserva ahora y obtén una degustación gratuita en uno de los restaurantes más exclusivos de Lima!"
+      },
+      {
+        "id": "3",
+        "name": "Expedición a la Selva Amazónica",
+        "description": "Descubre la biodiversidad única de la selva amazónica peruana. Explora sus ríos, observa la fauna exótica y conoce a las tribus locales.",
+        "community": "Adéntrate en las profundidades de la selva amazónica y conéctate con las comunidades indígenas que han preservado sus tradiciones durante siglos.",
+        "location": "Selva Amazónica, Perú",
+        "start_time": "8:00 AM",
+        "offer": "¡Reserva ahora y recibe un tour guiado por un chamán local con un descuento especial!"
+      },
+      {
+        "id": "4",
+        "name": "Retiro Espiritual en Machu Picchu",
+        "description": "Encuentra la paz interior en el místico santuario de Machu Picchu. Experimenta la energía espiritual de esta maravilla del mundo antiguo.",
+        "community": "Siente la conexión con los antiguos Incas y participa en ceremonias espirituales conducidas por chamanes locales en las alturas de los Andes.",
+        "location": "Machu Picchu, Perú",
+        "start_time": "6:00 AM",
+        "offer": "¡Reserva ahora y disfruta de una sesión de meditación gratuita al amanecer en Machu Picchu!"
+      },
+      {
+        "id": "5",
+        "name": "Ruta del Pisco en Ica",
+        "description": "Embárcate en un viaje sensorial a través de los viñedos de Ica y descubre los secretos detrás del famoso pisco peruano. ¡Una experiencia para los amantes del buen beber!",
+        "community": "Sumérgete en la cultura vitivinícola de Ica y conoce a los productores locales que han perfeccionado el arte de destilar el delicioso licor nacional.",
+        "location": "Ica, Perú",
+        "start_time": "3:00 PM",
+        "offer": "¡Reserva ahora y obtén una botella de pisco premium de cortesía al final del recorrido!"
+      },
+      {
+        "id": "6",
+        "name": "Buceo en las Islas Galápagos",
+        "description": "Explora las cristalinas aguas de las Islas Galápagos y descubre un mundo submarino lleno de vida y color. Una aventura inolvidable para los amantes del océano.",
+        "community": "Sumérgete en la rica biodiversidad marina de las Islas Galápagos y conoce a los conservacionistas que trabajan para proteger este frágil ecosistema.",
+        "location": "Islas Galápagos, Ecuador",
+        "start_time": "10:00 AM",
+        "offer": "¡Reserva ahora y obtén un descuento del 20% en tu equipo de buceo!"
+      },
+      {
+        "id": "7",
+        "name": "Ruta del Cacao en la Amazonía Ecuatoriana",
+        "description": "Embárcate en un viaje sensorial a través de los bosques tropicales de la Amazonía ecuatoriana y descubre el proceso de elaboración del cacao. ¡Una experiencia única para los amantes del chocolate!",
+        "community": "Explora las comunidades indígenas que cultivan el cacao en la Amazonía ecuatoriana y aprende sobre su cultura y tradiciones ancestrales.",
+        "location": "Amazonía Ecuatoriana",
+        "start_time": "9:30 AM",
+        "offer": "¡Reserva ahora y recibe una caja de chocolates artesanales de regalo!"
+      },
+      {
+        "id": "8",
+        "name": "Safari Fotográfico en África",
+        "description": "Embárcate en una aventura fotográfica por las vastas llanuras africanas y captura la majestuosidad de la vida salvaje en su hábitat natural.",
+        "community": "Conoce a los guías locales que te llevarán en un safari inolvidable por los parques nacionales de África y descubre la belleza y la fragilidad de la vida salvaje.",
+        "location": "África",
+        "start_time": "7:00 AM",
+        "offer": "¡Reserva ahora y obtén un álbum fotográfico digital de alta calidad de tu safari como recuerdo!"
+      },
+      {
+        "id": "9",
+        "name": "Tour Cultural en Kyoto",
+        "description": "Sumérgete en la rica historia y cultura de Kyoto mientras visitas sus impresionantes templos, jardines y santuarios. ¡Una experiencia enriquecedora para los amantes de la historia!",
+        "community": "Descubre la elegancia y la tradición de la antigua capital de Japón mientras te sumerges en la vida cotidiana de sus habitantes y aprendes sobre sus costumbres y rituales.",
+        "location": "Kyoto, Japón",
+        "start_time": "10:00 AM",
+        "offer": "¡Reserva ahora y obtén un descuento del 10% en la entrada a los principales sitios turísticos de Kyoto!"
+      },
+      {
+        "id": "10",
+        "name": "Viaje en Globo sobre Capadocia",
+        "description": "Contempla la impresionante belleza de los paisajes lunares de Capadocia desde las alturas en un emocionante paseo en globo aerostático.",
+        "community": "Descubre la fascinante historia y cultura de Capadocia mientras sobrevuelas sus icónicas formaciones rocosas y sus antiguas ciudades subterráneas.",
+        "location": "Capadocia, Turquía",
+        "start_time": "6:30 AM",
+        "offer": "¡Reserva ahora y recibe una botella de champán y una canasta de picnic durante tu vuelo!"
+      }
+    ]
+}

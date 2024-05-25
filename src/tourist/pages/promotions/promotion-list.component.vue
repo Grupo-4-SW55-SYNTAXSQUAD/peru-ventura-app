@@ -5,14 +5,14 @@ export default {
   name: 'promotion-list',
   components: { PromotionCard },
   props: {
-    promotion: Array,
+    promotions: Array,
   },
 };
 </script>
 
 <template>
   <div class="game-list">
-    <promotion-card></promotion-card>
+    <promotion-card v-for="promotion in promotions" :key="promotion.id" :promotion="promotion"></promotion-card>
   </div>
 </template>
 
