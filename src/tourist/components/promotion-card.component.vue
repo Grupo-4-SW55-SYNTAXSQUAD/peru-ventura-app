@@ -8,7 +8,7 @@
         <div class="promotion-details">
           <div class="game-info">
             <div>
-              <img src="../../../assets/images/promotion.png" />
+              <img src="../../assets/images/promotion.png" />
             </div>
             <div class="info-text">
               <p><strong>Place:</strong> {{ promotion.location }}</p>
