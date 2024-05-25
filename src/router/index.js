@@ -8,6 +8,7 @@ import Destinations from '../tourist/pages/destinations.vue';
 import HomeTourist from '../tourist/pages/home.vue';
 import Profile from '../tourist/pages/profile.vue';
 import Promotion from '../tourist/pages/promotions/promotion.vue';
+import CardPromotionDetailComponent from "../tourist/components/card-promotion-detail.component.vue";
 
 export const router = createRouter({
   history: createWebHistory(),
@@ -35,6 +36,10 @@ export const router = createRouter({
     {
       path: '/promotion',
       component: Promotion,
+    },
+    {
+      path: '/promotion/:id',
+      component: CardPromotionDetailComponent,
     },
     {
       path: '/destinations',

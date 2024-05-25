@@ -1,12 +1,11 @@
 <script>
-import PromotionCard from './promotion-card.component.vue';
-import PromotionList from './promotion-list.component.vue';
+import PromotionCard from '../../components/promotion-card.component.vue';
 export default {
   name: 'promotion',
-  components: { PromotionCard, PromotionList },
+  components: { PromotionCard },
 };
 </script>
 
 <template>
-  <promotion-list></promotion-list>
+  <promotion-card></promotion-card>
 </template>

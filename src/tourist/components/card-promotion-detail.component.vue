@@ -1,5 +1,5 @@
 <script>
-import {BaseService} from '../../shared/services/base.service';
+import {BaseService} from '../../shared/services/base.service.js';
 
 export default {
   name: "PromotionDetail",
