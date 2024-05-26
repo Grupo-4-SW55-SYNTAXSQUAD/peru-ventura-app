@@ -6,19 +6,19 @@
           <router-link to="/home" class="no-underline">
             <h1 class="text-4xl text-red-600 font-semibold">PeruVentura</h1>
           </router-link>
-          <router-link to="home">
+          <router-link to="/home">
             <Button label="Home" text plain />
           </router-link>
-          <router-link to="destinations">
+          <router-link to="/destinations">
             <Button label="Destinos" text plain />
           </router-link>
-          <router-link to="activities">
+          <router-link to="/activities">
             <Button label="Actividades" text plain />
           </router-link>
-          <router-link to="promotion">
+          <router-link to="/promotion">
             <Button label="Promociones" text plain />
           </router-link>
-          <router-link to="contact">
+          <router-link to="/contact">
             <Button label="Contactos" text plain />
           </router-link>
         </nav>

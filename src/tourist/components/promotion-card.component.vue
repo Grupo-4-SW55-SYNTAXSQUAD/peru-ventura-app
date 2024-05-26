@@ -9,9 +9,6 @@ export default {
     }
   },
   components: {},
-  props: {
-    promotionId: String,
-  },
   data() {
     return {
       promotions: [], // Change to array to hold multiple promotions

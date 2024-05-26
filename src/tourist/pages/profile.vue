@@ -14,8 +14,11 @@
       </template>
       <!-- Añadimos un botón para la funcionalidad de promoción del taller -->
       <template #footer>
-        <Button @click="promoteWorkshop">Promote Workshop</Button>
+        <router-link :to="`/create-promotion`" class="bg-primary p-2">
+          Promote Workshop
+        </router-link>
       </template>
+
     </Card>
   </section>
 </template>
@@ -41,12 +44,6 @@ export default {
     service.getTouristById(localTouristId).then((response) => {
       this.tourist = response.data;
     });
-  },
-  methods: {
-    // Método para promocionar el taller
-    promoteWorkshop() {
-      console.log("Workshop promotion initiated!");
-    },
   },
 };
 </script>

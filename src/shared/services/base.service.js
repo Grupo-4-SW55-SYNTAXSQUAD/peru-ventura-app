@@ -48,9 +48,9 @@ export class BaseService {
 
   async getPromotions() {
     try {
-      return await http.get(`${this.baseURL2}`);
+      return await http.get(this.baseURL2);
     } catch (error) {
-      console.error(`Error al obtener la promoción con el id ${id}:`, error);
+      console.error('Error al obtener las promociones:', error);
       throw error;
     }
   }
