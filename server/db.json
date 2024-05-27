@@ -8,7 +8,8 @@
       "location": "Andes Peruanos",
       "start_time": "9:00 AM",
       "offer": "¡Reserva ahora y recibe un 15% de descuento en tu próximo viaje de aventura!",
-      "price": "250 USD"
+      "price": "250 USD",
+      "apiId": "v1"
     },
     {
       "id": "2",
@@ -18,7 +19,8 @@
       "location": "Lima, Perú",
       "start_time": "11:30 AM",
       "offer": "¡Reserva ahora y obtén una degustación gratuita en uno de los restaurantes más exclusivos de Lima!",
-      "price": "150 USD"
+      "price": "150 USD",
+      "apiId": "v1"
     },
     {
       "id": "3",
@@ -28,7 +30,8 @@
       "location": "Selva Amazónica, Perú",
       "start_time": "8:00 AM",
       "offer": "¡Reserva ahora y recibe un tour guiado por un chamán local con un descuento especial!",
-      "price": "300 USD"
+      "price": "300 USD",
+      "apiId": "v1"
     },
     {
       "id": "4",
@@ -38,7 +41,8 @@
       "location": "Machu Picchu, Perú",
       "start_time": "6:00 AM",
       "offer": "¡Reserva ahora y disfruta de una sesión de meditación gratuita al amanecer en Machu Picchu!",
-      "price": "400 USD"
+      "price": "400 USD",
+      "apiId": "v1"
     },
     {
       "id": "5",
@@ -48,7 +52,8 @@
       "location": "Ica, Perú",
       "start_time": "3:00 PM",
       "offer": "¡Reserva ahora y obtén una botella de pisco premium de cortesía al final del recorrido!",
-      "price": "100 USD"
+      "price": "100 USD",
+      "apiId": "v1"
     },
     {
       "id": "6",
@@ -58,7 +63,8 @@
       "location": "Islas Galápagos, Ecuador",
       "start_time": "10:00 AM",
       "offer": "¡Reserva ahora y obtén un descuento del 20% en tu equipo de buceo!",
-      "price": "500 USD"
+      "price": "500 USD",
+      "apiId": "v1"
     },
     {
       "id": "7",
@@ -68,7 +74,8 @@
       "location": "Amazonía Ecuatoriana",
       "start_time": "9:30 AM",
       "offer": "¡Reserva ahora y recibe una caja de chocolates artesanales de regalo!",
-      "price": "200 USD"
+      "price": "200 USD",
+      "apiId": "v1"
     },
     {
       "id": "8",
@@ -78,7 +85,8 @@
       "location": "África",
       "start_time": "7:00 AM",
       "offer": "¡Reserva ahora y obtén un álbum fotográfico digital de alta calidad de tu safari como recuerdo!",
-      "price": "800 USD"
+      "price": "800 USD",
+      "apiId": "v1"
     },
     {
       "id": "9",
@@ -88,7 +96,8 @@
       "location": "Kyoto, Japón",
       "start_time": "10:00 AM",
       "offer": "¡Reserva ahora y obtén un descuento del 10% en la entrada a los principales sitios turísticos de Kyoto!",
-      "price": "120 USD"
+      "price": "120 USD",
+      "apiId": "v1"
     },
     {
       "id": "10",
@@ -98,7 +107,8 @@
       "location": "Capadocia, Turquía",
       "start_time": "6:30 AM",
       "offer": "¡Reserva ahora y recibe una botella de champán y una canasta de picnic durante tu vuelo!",
-      "price": "350 USD"
+      "price": "350 USD",
+      "apiId": "v1"
     }
   ]
 }

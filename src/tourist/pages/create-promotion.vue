@@ -65,7 +65,6 @@ import { BaseService } from '../../shared/services/base.service';
 
 export default {
   name: "create-promotion",
-
   data() {
     return {
       loading: false,
@@ -77,56 +76,22 @@ export default {
       location: '',
       offer: '',
       price: '0',
-      nextId: '11', // Cambia el ID a texto
       service: new BaseService(),
-      promotions: [] // Inicializa promotions como un array vacío
     };
   },
   created() {
-    this.getPromotions();
   },
   methods: {
-    async getPromotions() {
-      try {
-        const response = await this.service.getPromotions();
-        console.log('Promotions:', response.data);
-        this.promotions = response.data; // Asigna los datos de la respuesta directamente
-        this.isLoading = false; // Establece isLoading en falso una vez que se obtienen los datos
-      } catch (error) {
-        console.error('Failed to fetch promotions:', error);
-        this.isLoading = false; // Establece isLoading en falso incluso en caso de error
-      }
-    },
     async createPromotion() {
       this.loading = true;
-      const newPromotion = {
-        id: this.nextId,
-        name: this.promotionName,
-        description: this.description,
-        community: this.community,
-        location: this.location,
-        start_time: this.schedule,
-        offer: this.offer,
-        price: (this.price).toString(),
-      };
-
       try {
         // Utiliza la misma instancia de BaseService
-        const response = await this.service.addPromotion(newPromotion);
-        console.log('Promotion created:', response.data);
-
-        // Incrementa el ID para la próxima promoción
-        this.nextId = (parseInt(this.nextId) + 1).toString();
-
-        // Obtén las promociones actualizadas después de agregar la nueva
-
-        await this.getPromotions();
+        const newPromotion = await this.service.addPromotion(this.promotionName, this.description, this.community, this.location, this.schedule, this.offer, this.price);
 
         // Después de crear la promoción, redirige al usuario al perfil
         this.$router.push('/profile');
       } catch (error) {
         console.error('Error creating promotion:', error);
-        // Maneja el error, si es necesario
       } finally {
         this.loading = false; // Desactiva el estado de carga
       }

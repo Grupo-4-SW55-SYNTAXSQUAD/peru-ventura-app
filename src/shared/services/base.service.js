@@ -8,7 +8,7 @@ export class BaseService {
   ownerEndpoint = 'owner';
   touristEndpoint = 'tourist';
   baseURL2= 'http://localhost:3000/api/v1/promotion'
-
+  nextid=10;
 
   async getAllOwners() {
     try {
@@ -63,9 +63,19 @@ export class BaseService {
       throw error;
     }
   }
-  async addPromotion(promotion) {
+  async addPromotion(name, description, community, location, schedule, offer, price) {
+    const newPromotion = {
+      id: (++this.nextid).toString(),
+      name: name,
+      description: description,
+      community: community,
+      location: location,
+      start_time: schedule,
+      offer: offer,
+      price: (price).toString(),
+    };
     try {
-      return await http.post(`${this.baseURL2}`, promotion);
+      return await http.post(`${this.baseURL2}`, newPromotion);
     } catch (error) {
       console.error('Error al agregar la promoción:', error);
       throw error;
