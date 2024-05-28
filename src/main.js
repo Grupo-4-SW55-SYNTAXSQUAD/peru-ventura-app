@@ -17,7 +17,7 @@ import { createApp } from 'vue';
 import App from './App.vue';
 import { router } from './router/index';
 import './style.css';
-
+import Toast from 'primevue/toast';
 createApp(App)
   .component('Toolbar', Toolbar)
   .component('Carousel', Carousel)
@@ -29,6 +29,7 @@ createApp(App)
   .component('Card', Card)
   .component('DataView', DataView)
   .component('Avatar', Avatar)
+    .component('Toast', Toast)
   .use(router)
   .use(PrimeVue, { ripple: true })
   .mount('#app');

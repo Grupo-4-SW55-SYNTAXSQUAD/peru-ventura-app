@@ -7,7 +7,7 @@ const http = axios.create({
 export class BaseService {
   ownerEndpoint = 'owner';
   touristEndpoint = 'tourist';
-  baseURL2= 'http://localhost:3000/api/v1/promotion'
+  baseURL2= 'http://localhost:3000/api/v1'
   nextid=10;
 
   async getAllOwners() {
@@ -18,7 +18,14 @@ export class BaseService {
       throw error;
     }
   }
-
+  async addUserReservation(userId, activityId){
+    try{
+      return await http.patch(`http://localhost:3000/reservations/${userId}`, {user_id: [activityId]});
+    } catch (error) {
+      console.error('Error al agregar la reserva:', error);
+      throw error;
+    }
+  }
   async getOwnerById(id) {
     try {
       return await http.get(`${this.ownerEndpoint}/${id}`);
@@ -48,7 +55,7 @@ export class BaseService {
 
   async getPromotions() {
     try {
-      return await http.get(this.baseURL2);
+      return await http.get(`${this.baseURL2}/promotion`);
     } catch (error) {
       console.error('Error al obtener las promociones:', error);
       throw error;
@@ -57,7 +64,7 @@ export class BaseService {
 
   async getPromotionsById(id) {
     try {
-      return await http.get(`${this.baseURL2}?id=${id}`);
+      return await http.get(`${this.baseURL2}/promotion?id=${id}`);
     } catch (error) {
       console.error(`Error al obtener la promoción con el id ${id}:`, error);
       throw error;
@@ -75,7 +82,7 @@ export class BaseService {
       price: (price).toString(),
     };
     try {
-      return await http.post(`${this.baseURL2}`, newPromotion);
+      return await http.post(`${this.baseURL2}/promotion`, newPromotion);
     } catch (error) {
       console.error('Error al agregar la promoción:', error);
       throw error;
