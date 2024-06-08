@@ -1,10 +1,12 @@
 <template>
-  <div class="card flex justify-content-center">
-    <div class="flex flex-column gap-3">
+  <div class="card flex justify-content-center h-fit">
+    <div
+      class="flex flex-col items-baseline justify-center gap-3 p-checkbox-box text-white rounded-md"
+    >
       <div
         v-for="destination in destinations"
         :key="destination.key"
-        class="flex align-items-center gap-2"
+        class="flex align-items-center gap-2 px-8 py-4"
       >
         <Checkbox
           v-model="selectedDestinations"
@@ -34,7 +36,7 @@ const destinations = ref([
 const selectedDestinations = ref([]);
 </script>
 
-<style>
+<style scoped>
 .p-checkbox-box {
   background-color: #191919;
 }

@@ -9,31 +9,41 @@
           placeholder="Sort By Price"
           @change="onSortChange($event)"
         />
+        <!-- <Button
+          class="btn-custom-shorted"
+          v-if="owners.length > 0"
+          label="Clear"
+          @click="clearOwners"
+        /> -->
       </template>
-      <template #list>
+      <template #list="slotProps">
         <div class="grid grid-nogutter">
-          <div v-for="(item, index) in owners" :key="index" class="col-12">
+          <div
+            v-for="(item, index) in slotProps.items"
+            :key="index"
+            class="col-12"
+          >
             <div
               class="flex flex-column sm:flex-row sm:align-items-center p-4 gap-3"
               :class="{ 'border-top-1 surface-border': index !== 0 }"
             >
               <div class="md:w-10rem relative">
                 <img
-                  class="block xl:block mx-auto border-round w-full"
+                  class="block xl:block mx-auto border-round w-24"
                   :src="item.imageUrl"
                   :alt="item.nameActivity"
                 />
               </div>
               <div
-                class="flex flex-column md:flex-row justify-content-between md:align-items-center flex-1 gap-4"
+                class="flex flex-column md:flex-row justify-content-between md:align-items-center flex-1 gap-4 justify-between items-center"
               >
                 <div
                   class="flex flex-row md:flex-column justify-content-between align-items-start gap-2"
                 >
                   <div>
-                    <span class="font-medium text-secondary text-sm">
-                      {{ item.destiny }}
-                    </span>
+                    <span class="font-medium text-secondary text-sm">{{
+                      item.destiny
+                    }}</span>
                     <div class="text-lg font-medium text-900 mt-2">
                       {{ item.nameActivity }}
                     </div>
@@ -47,22 +57,24 @@
                           0px 1px 2px 0px rgba(0, 0, 0, 0.06);
                       "
                     >
-                      <span class="text-900 font-medium text-sm">
-                        {{ item.hours }}
-                      </span>
+                      <span class="text-900 font-medium text-sm">{{
+                        item.hours
+                      }}</span>
                       <i class="pi pi-star-fill text-yellow-500"></i>
                     </div>
                   </div>
                 </div>
                 <div class="flex flex-column md:align-items-end gap-5">
-                  <span class="text-xl font-semibold text-900">
-                    ${{ item.price }}
-                  </span>
-                  <div class="flex flex-row-reverse md:flex-row gap-2">
-                    <Button icon="pi pi-heart" outlined></Button>
+                  <span class="text-xl font-semibold text-900"
+                    >${{ item.price }}</span
+                  >
+                  <div
+                    class="flex flex-row-reverse md:flex-row gap-2 items-center justify-center"
+                  >
+                    <!--<Button icon="pi pi-heart" outlined></Button> -->
                     <router-link
                       :to="`/${item.id}`"
-                      class="flex-auto md:flex-initial white-space-nowrap p-2 bg-primary"
+                      class="flex-auto md:flex-initial white-space-nowrap p-2 bg-primary bg-black text-white text-center rounded-lg"
                       >Ver Detalles</router-link
                     >
                   </div>
@@ -77,8 +89,8 @@
 </template>
 
 <script setup>
+import { onMounted, ref } from 'vue';
 import { BaseService } from '../../shared/services/base.service';
-import { ref, onMounted } from 'vue';
 
 const service = new BaseService();
 const owners = ref([]);
@@ -92,7 +104,6 @@ const sortOptions = ref([
 
 onMounted(() => {
   service.getAllOwners().then((response) => {
-    console.log(response.data);
     if (Array.isArray(response.data)) {
       owners.value = response.data
         .map((item) => ({
@@ -127,16 +138,14 @@ const onSortChange = (event) => {
     sortKey.value = sortValue;
   }
 };
+
+const clearOwners = () => {
+  owners.value = [];
+};
 </script>
 
-<style>
+<style scoped>
 .p-dropdown {
-  background-color: var(--kt-black);
-  & .p-dropdown-label {
-    color: var(--kt-white);
-  }
-  & .p-dropdown-trigger {
-    color: var(--kt-white);
-  }
+  border: 1px solid var(--kt-black);
 }
 </style>
