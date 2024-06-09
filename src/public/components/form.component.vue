@@ -1,7 +1,7 @@
 <template>
   <form
     @submit.prevent="handleSubmit"
-    class="h-dvh w-dvw absolute top-0 flex justify-center items-center bg-login"
+    class="h-dvh z-10 w-dvw absolute top-0 flex justify-center items-center bg-login"
   >
     <div class="card flex flex-column md:flex-col gap-3 rounded-md p-5">
       <div class="flex justify-center items-center">

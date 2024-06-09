@@ -1,77 +1,96 @@
-<template>
-  <header class="card" :class="darkModeClass">
-    <Toolbar style="border-radius: 3rem; padding: 1rem 1rem 1rem 1.5rem">
-      <template #start>
-        <nav class="flex align-items-center gap-2">
-          <router-link to="/home" class="no-underline">
-            <h1 class="text-4xl text-red-600 font-semibold">PeruVentura</h1>
-          </router-link>
-          <router-link to="home">
-            <Button label="Home" text plain />
-          </router-link>
-          <router-link to="destinations">
-            <Button label="Destinos" text plain />
-          </router-link>
-          <router-link to="activities">
-            <Button label="Actividades" text plain />
-          </router-link>
-          <router-link to="promotion">
-            <Button label="Promociones" text plain />
-          </router-link>
-          <router-link to="contact">
-            <Button label="Contactos" text plain />
-          </router-link>
-        </nav>
-      </template>
-      <template #end>
-        <div class="card flex justify-content-center mr-4">
-          <InputSwitch v-model="checked" />
-        </div>
-        <div v-if="tourist" class="flex align-items-center gap-2">
-          <router-link to="/profile">
-            <Avatar
-              :image="tourist.avatar"
-              style="width: 32px; height: 32px; border-radius: 50%"
-            />
-          </router-link>
-        </div>
-        <div v-else>
-          <router-link to="/profile">
-            <i class="pi pi-user" style="font-size: 24px"></i>
-          </router-link>
-        </div>
-      </template>
-    </Toolbar>
-  </header>
-</template>
 
 <script>
-import { BaseService } from '../../shared/services/base.service';
-const service = new BaseService();
+// import { BaseService } from '../../shared/services/base.service';
+// import Home from "../../tourist/pages/home.vue";
+// const service = new BaseService();
 
 export default {
-  components: {},
-  props: {
-    touristId: String,
-  },
+  //components: {},
+  // props: {
+  //   touristId: String,
+  // },
   data() {
     return {
-      tourist: null,
-      localTouristId: null,
-      checked: false,
-    };
+      // tourist: null,
+      // localTouristId: null,
+      // checked: false,
+      items:[
+        {
+          label:"Home",
+          icon: "pi pi-home",
+          to:"/home",
+        },
+        {
+          label:"Destination",
+          icon: "pi pi-home",
+          to:"/destinations",
+        },
+        {
+          label:"Activities",
+          icon: "pi pi-home",
+          to:"/activities",
+        },
+        {
+          label:"Promotions",
+          icon: "pi pi-home",
+          to:"/promotions",
+        }
+      ]
+    }
   },
-  computed: {
-    darkModeClass() {
-      return this.checked ? 'dark-mode' : '';
-    },
-  },
-  created() {
-    this.localTouristId =
-      this.touristId || Math.floor(Math.random() * 20).toString();
-    service.getTouristById(this.localTouristId).then((response) => {
-      this.tourist = response.data;
-    });
-  },
+  // computed: {
+  //   darkModeClass() {
+  //     return this.checked ? 'dark-mode' : '';
+  //   },
+  // },
+  // created() {
+  //   this.localTouristId =
+  //       this.touristId || Math.floor(Math.random() * 20).toString();
+  //   service.getTouristById(this.localTouristId).then((response) => {
+  //     this.tourist = response.data;
+  //   });
+  // },
 };
 </script>
+
+<template>
+  <div class="fixed-menu fixed top-0 left-0 w-full z-5">
+    <div class="relative card">
+      <Menubar :model="items">
+        <template #start>
+          <h1 class="title ">PERUVENTURA</h1>
+        </template>
+        <template #item="{ item, props, }">
+          <router-link :to="item.to" class="flex align-items-center" v-bind="props.action">
+            <span :class="item.icon"></span>
+            <span class="ml-2">{{ item.label }}</span>
+          </router-link>
+        </template>
+        <template #end>
+          <div class="card flex justify-content-center mr-4">
+            <InputSwitch v-model="checked" />
+          </div>
+          <div v-if="tourist" class="flex align-items-center gap-2">
+            <router-link to="/profile">
+              <Avatar
+                :image="tourist.avatar"
+                style="width: 32px; height: 32px; border-radius: 50%"
+              />
+            </router-link>
+          </div>
+          <div >
+            <router-link to="/profile">
+              <i class="pi pi-user" style="font-size: 24px"></i>
+            </router-link>
+          </div>
+        </template>
+      </Menubar>
+    </div>
+  </div>
+
+</template>
+<style scoped>
+.title{
+  font-size: 20px;
+}
+</style>

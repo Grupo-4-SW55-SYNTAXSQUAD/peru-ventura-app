@@ -16,9 +16,11 @@ import MultiSelect from 'primevue/multiselect';
 import Password from 'primevue/password';
 import 'primevue/resources/primevue.min.css';
 import 'primevue/resources/themes/md-light-indigo/theme.css';
+import 'primeflex/primeflex.css';
 import Toast from 'primevue/toast';
 import ToastService from 'primevue/toastservice';
 import Toolbar from 'primevue/toolbar';
+import Menubar from "primevue/menubar";
 import { createApp } from 'vue';
 import App from './App.vue';
 import { router } from './router/index';
@@ -44,4 +46,5 @@ createApp(App)
   .component('Card', Card)
   .component('DataView', DataView)
   .component('Avatar', Avatar)
+  .component('Menubar', Menubar)
   .mount('#app');

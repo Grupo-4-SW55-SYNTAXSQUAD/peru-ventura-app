@@ -1,4 +1,4 @@
-<template>
+<template class="section">
   <HeroComponent />
   <SearchComponent />
   <h2 class="text-3xl text-center py-3">Destinos mejor calificados</h2>
