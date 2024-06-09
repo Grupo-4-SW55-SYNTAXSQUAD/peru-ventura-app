@@ -8,6 +8,8 @@ import Destinations from '../tourist/pages/destinations.vue';
 import Home from '../tourist/pages/home.vue';
 import Profile from '../tourist/pages/profile.vue';
 import Promotion from '../tourist/pages/promotions/promotion.vue';
+import HomeOwner from "../owner/pages/home-owner.vue";
+import DestinationOwner from "../owner/pages/destination-owner.vue";
 export const router = createRouter({
   history: createWebHistory(),
   routes: [
@@ -51,5 +53,13 @@ export const router = createRouter({
       path: '/profile',
       component: Profile,
     },
+    {
+      path:'/home-owner',
+      component: HomeOwner,
+    },
+    {
+      path: '/destination-owner',
+      component: DestinationOwner,
+    }
   ],
 });
