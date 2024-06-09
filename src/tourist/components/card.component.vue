@@ -9,10 +9,11 @@
       <p class="m-0">{{ owner.description }}</p>
     </template>
     <template #footer>
-      <div class="flex gap-3 mt-1">
+
+      <div class="flex gap-3 mt-1 ">
         <router-link
           :to="'/' + owner.id"
-          class="w-full bg-primary py-2 text-center"
+          class="w-full bg-primary py-2 text-center ver-detalles-button"
         >
           Ver Detalles
         </router-link>

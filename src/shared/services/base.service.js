@@ -7,7 +7,8 @@ const http = axios.create({
 export class BaseService {
   ownerEndpoint = 'owner';
   touristEndpoint = 'tourist';
-
+  baseURL2= 'http://localhost:3000/api/v1'
+  nextid=10;
   async getAllOwners() {
     try {
       return await http.get(this.ownerEndpoint);
@@ -40,6 +41,41 @@ export class BaseService {
       return await http.get(`${this.touristEndpoint}/${id}`);
     } catch (error) {
       console.error(`Error al obtener el turista con el id ${id}:`, error);
+      throw error;
+    }
+  }
+  async getPromotions() {
+    try {
+      return await http.get(`${this.baseURL2}/promotion`);
+    } catch (error) {
+      console.error('Error al obtener las promociones:', error);
+      throw error;
+    }
+  }
+
+  async getPromotionsById(id) {
+    try {
+      return await http.get(`${this.baseURL2}/promotion?id=${id}`);
+    } catch (error) {
+      console.error(`Error al obtener la promoción con el id ${id}:`, error);
+      throw error;
+    }
+  }
+  async addPromotion(name, description, community, location, schedule, offer, price) {
+    const newPromotion = {
+      id: (++this.nextid).toString(),
+      name: name,
+      description: description,
+      community: community,
+      location: location,
+      start_time: schedule,
+      offer: offer,
+      price: (price).toString(),
+    };
+    try {
+      return await http.post(`${this.baseURL2}/promotion`, newPromotion);
+    } catch (error) {
+      console.error('Error al agregar la promoción:', error);
       throw error;
     }
   }

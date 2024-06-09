@@ -8,6 +8,8 @@ import Destinations from '../tourist/pages/destinations.vue';
 import Home from '../tourist/pages/home.vue';
 import Profile from '../tourist/pages/profile.vue';
 import Promotion from '../tourist/pages/promotions/promotion.vue';
+import PromotionDetail from "../tourist/pages/promotions-detail.vue";
+import createPromotion from "../tourist/pages/create-promotion.vue";
 export const router = createRouter({
   history: createWebHistory(),
   routes: [
@@ -36,6 +38,10 @@ export const router = createRouter({
       component: Promotion,
     },
     {
+      path: '/promotion/:id',
+      component: PromotionDetail,
+    },
+    {
       path: '/destinations',
       component: Destinations,
     },
@@ -51,5 +57,9 @@ export const router = createRouter({
       path: '/profile',
       component: Profile,
     },
+    {
+      path: '/create-promotion',
+      component: createPromotion,
+    }
   ],
 });

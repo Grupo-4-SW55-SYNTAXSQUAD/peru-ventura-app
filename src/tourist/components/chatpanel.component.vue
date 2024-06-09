@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <pv-panel :style="{ height: '46.5em', width: '20em' }">
+  <Panel :style="{ height: '46.5em', width: '20em' }">
     <template #header>
       <div
         style="
@@ -26,7 +26,7 @@
         <p>Mensajes:</p>
       </div>
     </div>
-  </pv-panel>
+  </Panel>
 </template>
 
 <style scoped>

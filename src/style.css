@@ -68,3 +68,20 @@
 .text-red-500 {
   color: #f56565;
 }
+
+.ver-detalles-button {
+  background-color: var(--color-info);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 8px;
+  font-weight: 800;
+  transition: all 300ms ease;
+  &:hover {
+    background-color: transparent;
+    color:#191919;
+    cursor: pointer;
+    border: 1px solid #191919;
+    transition: all 300ms ease;
+  }
+}

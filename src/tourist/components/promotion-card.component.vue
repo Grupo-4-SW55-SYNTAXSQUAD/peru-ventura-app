@@ -55,9 +55,11 @@ export default {
               </div>
             </div>
             <div class="promotion-actions">
-              <router-link :to="`/promotion/${promotion.id}`" class="bg-primary p-2">
-                Ver Detalles
-              </router-link>
+              <div class="ver-detalles-button" >
+                <router-link :to="`/promotion/${promotion.id}`" class="bg-primary p-2">
+                  Ver Detalles
+                </router-link>
+              </div>
               <div class="price-box">
                 <p class="price-text">{{ promotion.price }}</p>
               </div>
@@ -116,19 +118,12 @@ export default {
   justify-content: space-between;
 }
 
-.ver-detalles-button {
-  background-color: purple;
-  color: white;
-  border: none;
-  padding: 15px 30px;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
 .price-box {
-  background-color: lightgray;
+  background-color: forestgreen;
   padding: 15px;
   border-radius: 8px;
+  color:#fefefe;
+  font-weight: 800;
 }
 
 .price-text {

@@ -1,8 +1,17 @@
 <template>
-  <div>
+  <section class="listCardsDestinations">
     <CardComponent v-for="owner in owners" :key="owner.id" :owner="owner" />
-  </div>
+  </section>
 </template>
+
+<style scoped>
+.listCardsDestinations{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Establece dos columnas de igual tamaño */
+  gap: 2rem; /* Añadir un espacio entre los elementos si es necesario */
+}
+
+</style>
 
 <script>
 import CardComponent from './card.component.vue';

@@ -12,6 +12,13 @@
         <p>Birthdate: {{ tourist.birthday }}</p>
         <p>Country: {{ tourist.country }}</p>
       </template>
+      <!-- Añadimos un botón para la funcionalidad de promoción del taller -->
+      <template #footer>
+        <router-link :to="`/create-promotion`" class="bg-primary p-2">
+          Promote Workshop
+        </router-link>
+      </template>
+
     </Card>
   </section>
 </template>

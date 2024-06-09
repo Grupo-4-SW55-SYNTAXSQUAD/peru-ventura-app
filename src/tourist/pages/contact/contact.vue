@@ -1,6 +1,6 @@
 <script setup>
-import ChatPanelComponent from './chatpanel.component.vue';
-import ContactsPanelComponent from './contactspanel.component.vue';
+import ChatPanelComponent from '../../components/chatpanel.component.vue';
+import ContactsPanelComponent from '../../components/contactspanel.component.vue';
 </script>
 
 <template>
@@ -14,3 +14,4 @@ import ContactsPanelComponent from './contactspanel.component.vue';
 </template>
 
 <style scoped></style>
+

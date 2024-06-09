@@ -4,6 +4,7 @@ import Button from 'primevue/button';
 import Card from 'primevue/card';
 import Carousel from 'primevue/carousel';
 import Checkbox from 'primevue/checkbox';
+import Panel from 'primevue/panel';
 import PrimeVue from 'primevue/config';
 import DataView from 'primevue/dataview';
 import Dropdown from 'primevue/dropdown';
@@ -38,6 +39,7 @@ createApp(App)
   .component('InputSwitch', InputSwitch)
   .component('InputText', InputText)
   .component('Button', Button)
+    .component('Panel', Panel)
   .component('Password', Password)
   .component('FloatLabel', FloatLabel)
   .component('Checkbox', Checkbox)
