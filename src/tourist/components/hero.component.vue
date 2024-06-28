@@ -25,7 +25,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url(../../assets/images/hero.png);
+    background-image: url(../../../public/assets/images/hero.png);
     background-size: cover;
     background-position: initial;
     background-repeat: no-repeat;

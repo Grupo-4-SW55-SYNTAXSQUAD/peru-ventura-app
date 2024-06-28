@@ -4,7 +4,7 @@
   <pv-panel :style="{ height: '46.5em', width: '55em' }">
     <div class="flex flex-column gap-2 bg-green-300">
       <div class="flex gap-2 p-3">
-        <img src="../../assets/images/ai-icon.png" width="50" height="50" />
+        <img src="../../../public/assets/images/ai-icon.png" width="50" height="50" />
         <h1>AI Bot</h1>
       </div>
       <hr />
@@ -17,20 +17,20 @@
         >
         </pv-inputtext>
         <pv-button>
-          <img src="../../assets/images/emoji.png" width="40" height="40" />
+          <img src="../../../public/assets/images/emoji.png" width="40" height="40" />
         </pv-button>
         <pv-button>
-          <img src="../../assets/images/upload.png" width="40" height="40" />
+          <img src="../../../public/assets/images/upload.png" width="40" height="40" />
         </pv-button>
         <pv-button>
           <img
-            src="../../assets/images/microphone.png"
+            src="../../../public/assets/images/microphone.png"
             width="40"
             height="40"
           />
         </pv-button>
         <pv-button>
-          <img src="../../assets/images/send.png" width="40" height="40" />
+          <img src="../../../public/assets/images/send.png" width="40" height="40" />
         </pv-button>
       </div>
     </div>

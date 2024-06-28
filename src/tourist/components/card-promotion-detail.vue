@@ -45,7 +45,7 @@ export default {
           <div class="promotion-details">
             <div class="game-info">
               <div class="image-container">
-                <img src="../../assets/images/promotion.png"/>
+                <img src="../../../public/assets/images/promotion.png"/>
               </div>
               <div class="info-text">
                 <p><strong>Description:</strong><br> {{ promotion[0].description }}</p>
