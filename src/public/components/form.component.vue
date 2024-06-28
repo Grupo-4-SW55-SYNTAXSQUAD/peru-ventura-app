@@ -34,6 +34,7 @@
         Registrate
       </router-link>
     </div>
+    <!--- <Toast ref="toast" /> --->
   </form>
 </template>
 
