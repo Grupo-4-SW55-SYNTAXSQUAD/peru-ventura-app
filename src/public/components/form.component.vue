@@ -36,7 +36,10 @@
         Registrate
       </router-link>
     </div>
+<<<<<<< HEAD
     <!-- <Toast ref="toast" /> -->
+=======
+>>>>>>> 9462e1aa488e6a8d758f8147e5674f0f399ba893
   </form>
 </template>
 
