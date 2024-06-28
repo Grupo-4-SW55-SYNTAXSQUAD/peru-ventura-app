@@ -17,3 +17,9 @@ export default {
   },
 };
 </script>
+
+<style>
+.main {
+  padding: 0 3rem;
+}
+</style>

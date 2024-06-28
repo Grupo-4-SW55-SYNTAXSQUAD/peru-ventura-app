@@ -1,20 +1,30 @@
 <template>
-  <!-- Componente de opciones (falta crear) -->
-  <!-- <CarouselComponent /> -->
   <section class="activities py-5">
-    <CheckListComponent />
-    <DataListComponent />
+    <CheckListDatalistComponent
+      @update:selectedActivities="updateSelectedActivities"
+    />
+    <DataListComponent :selectedActivities="selectedActivities" />
   </section>
 </template>
 
 <script>
+import CheckListDatalistComponent from '../components/checkdataList.component.vue';
 import DataListComponent from '../components/datalist.component.vue';
-import CheckListComponent from '../components/checklist.component.vue';
 
 export default {
   components: {
     DataListComponent,
-    CheckListComponent,
+    CheckListDatalistComponent,
+  },
+  data() {
+    return {
+      selectedActivities: [],
+    };
+  },
+  methods: {
+    updateSelectedActivities(activities) {
+      this.selectedActivities = activities;
+    },
   },
 };
 </script>
@@ -23,5 +33,11 @@ export default {
 .activities {
   display: flex;
   justify-content: space-around;
+}
+@media (max-width: 798px) {
+  .activities {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 </style>

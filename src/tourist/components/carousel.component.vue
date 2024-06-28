@@ -1,7 +1,7 @@
 <template>
-  <div class="card">
+  <div class="">
     <Carousel
-      :value="owners"
+      :value="trips"
       :numVisible="3"
       :numScroll="1"
       :responsiveOptions="responsiveOptions"
@@ -14,12 +14,12 @@
             <div class="relative mx-auto">
               <img
                 :src="slotProps.data.imageUrl"
-                :alt="slotProps.data.nameAgency"
+                :alt="slotProps.data.name"
                 class="w-full border-round"
               />
             </div>
           </div>
-          <div class="mb-3 font-medium">{{ slotProps.data.nameActivity }}</div>
+          <div class="mb-3 font-medium">{{ slotProps.data.name }}</div>
           <div class="flex justify-content-between align-items-center">
             <div class="mt-0 font-semibold text-xl">
               {{ slotProps.data.nameAgency }}
@@ -27,8 +27,7 @@
             <span class="flex justify-content-center flex-wrap">
               <Button icon="pi pi-heart" severity="secondary" outlined />
               <router-link
-                :to="'/' + slotProps.data.id"
-                label="Ver Detalles"
+                :to="'/destination-trip/' + slotProps.data.id"
                 class="p-button p-component ml-2 no-underline text-white"
               >
                 Ver Detalles
@@ -42,17 +41,18 @@
 </template>
 
 <script setup>
+import { onMounted, ref } from 'vue';
 import { BaseService } from '../../shared/services/base.service';
-import { ref, onMounted } from 'vue';
 
 const service = new BaseService();
-const owners = ref([]);
+const trips = ref([]);
 
 onMounted(() => {
-  service.getAllOwners().then((res) => {
-    owners.value = res.data;
+  service.getAllDestinationTrips().then((res) => {
+    trips.value = res.data;
   });
 });
+
 const responsiveOptions = ref([
   {
     breakpoint: '1400px',

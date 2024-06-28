@@ -4,12 +4,12 @@
     <div class="hero__info">
       <strong>Bienvenido a la mejor plataforma de turismo</strong>
       <p class="hero__description">
-        Encuentra las mejores actividades turísticas en un solo lugar
+        Encuentra las mejores talleres turísticas en un solo lugar
       </p>
       <router-link
-        to="/activities"
+        to="/taller"
         class="bg-primary text-white px-4 py-2 rounded-full"
-        >Ver actividades</router-link
+        >Ver Talleres</router-link
       >
     </div>
   </section>

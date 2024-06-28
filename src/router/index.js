@@ -4,10 +4,11 @@ import Register from '../public/pages/register.vue';
 import Activities from '../tourist/pages/activities.vue';
 import ActivityDetail from '../tourist/pages/activity-detail.vue';
 import Contact from '../tourist/pages/contact/contact.vue';
+import DestinationsDetatil from '../tourist/pages/destinations-detail.vue';
 import Destinations from '../tourist/pages/destinations.vue';
 import Home from '../tourist/pages/home.vue';
 import Profile from '../tourist/pages/profile.vue';
-import Promotion from '../tourist/pages/promotions/promotion.vue';
+import Promotion from '../tourist/pages/promotions.vue';
 export const router = createRouter({
   history: createWebHistory(),
   routes: [
@@ -28,7 +29,7 @@ export const router = createRouter({
       component: Home,
     },
     {
-      path: '/activities',
+      path: '/activity',
       component: Activities,
     },
     {
@@ -44,8 +45,12 @@ export const router = createRouter({
       component: Contact,
     },
     {
-      path: '/:id',
+      path: '/activity/:id',
       component: ActivityDetail,
+    },
+    {
+      path: '/destinations/:id',
+      component: DestinationsDetatil,
     },
     {
       path: '/profile',

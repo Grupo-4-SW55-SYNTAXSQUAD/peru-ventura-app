@@ -1,9 +1,9 @@
 <template>
   <form
     @submit.prevent="handleSubmit"
-    class="h-dvh w-dvw absolute top-0 flex justify-center items-center bg-login"
+    class="h-dvh w-dvw absolute top-0 left-0 flex justify-center items-center bg-login"
   >
-    <div class="card flex flex-column md:flex-col gap-3 rounded-md p-5">
+    <div class="flex flex-col md:flex-col sm:flex-col gap-3 rounded-md p-5">
       <div class="flex justify-center items-center">
         <h2 class="text-3xl">Login</h2>
       </div>
@@ -21,7 +21,7 @@
         <Password
           v-model="password"
           placeholder="Password"
-          class="p-2"
+          class="p-2 card"
           :feedback="false"
           toggleMask
         />
@@ -29,12 +29,14 @@
       <span v-if="error.password" class="text-red-500">{{
         error.password
       }}</span>
-      <button type="submit" class="btn-primary">Login</button>
+      <button type="submit" class="btn-primary" :disabled="isSubmitting">
+        Login
+      </button>
       <router-link to="/register" class="btn-secondary">
         Registrate
       </router-link>
     </div>
-    <Toast ref="toast" />
+    <!-- <Toast ref="toast" /> -->
   </form>
 </template>
 
@@ -42,30 +44,60 @@
 import { useToast } from 'primevue/usetoast';
 import { reactive, ref } from 'vue';
 import { useRouter } from 'vue-router';
+import { BaseService } from '../../shared/services/base.service';
 
+const service = new BaseService();
 const email = ref('');
 const password = ref('');
 const toast = useToast();
 const router = useRouter();
+const isSubmitting = ref(false);
 
 const error = reactive({
   email: '',
   password: '',
 });
 
-const handleSubmit = () => {
+const handleSubmit = async () => {
   if (validateForm()) {
-    console.log('Email:', email.value);
-    console.log('Password:', password.value);
-    toast.add({
-      severity: 'success',
-      summary: 'Success',
-      detail: 'Login successful!',
-      life: 3000,
-    });
-    setTimeout(() => {
-      router.push('/home');
-    }, 1000);
+    isSubmitting.value = true;
+    try {
+      const response = await service.getAllUsers();
+      const users = response.data;
+      const user = users.find(
+        (u) => u.email === email.value && u.password === password.value
+      );
+
+      if (user) {
+        localStorage.setItem('user', JSON.stringify(user));
+        toast.add({
+          severity: 'success',
+          summary: 'Success',
+          detail: 'Login successful!',
+          life: 3000,
+        });
+        setTimeout(() => {
+          router.push('/home');
+        }, 1000);
+      } else {
+        toast.add({
+          severity: 'error',
+          summary: 'Error',
+          detail: 'Invalid email or password',
+          life: 3000,
+        });
+      }
+    } catch (error) {
+      console.error('Error fetching users:', error);
+      toast.add({
+        severity: 'error',
+        summary: 'Error',
+        detail: 'Error logging in. Please try again.',
+        life: 3000,
+      });
+    } finally {
+      isSubmitting.value = false;
+    }
   } else {
     toast.add({
       severity: 'error',
@@ -107,3 +139,38 @@ const validateEmail = (email) => {
   return emailRegex.test(email);
 };
 </script>
+
+<style scoped>
+.btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 0.5rem;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: white;
+  &:hover {
+    background-color: var(--color-secondary-dark);
+    color: var(--kt-black);
+  }
+}
+
+.btn-secondary {
+  background-color: var(--color-secondary);
+  color: white;
+  &:hover {
+    background-color: var(--color-secondary-dark);
+    color: var(--kt-black);
+  }
+}
+
+.input {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+</style>
