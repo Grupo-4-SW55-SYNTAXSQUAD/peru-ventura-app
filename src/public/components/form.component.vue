@@ -1,7 +1,7 @@
 <template>
   <form
-    @submit.prevent="handleSubmit"
-    class="h-dvh w-dvw absolute top-0 flex justify-center items-center bg-login"
+      @submit.prevent="handleSubmit"
+      class="h-dvh w-dvw absolute top-0 flex justify-center items-center bg-login"
   >
     <div class="card flex flex-column md:flex-col gap-3 rounded-md p-5">
       <div class="flex justify-center items-center">
@@ -19,16 +19,16 @@
           <i class="pi pi-lock"></i>
         </InputGroupAddon>
         <Password
-          v-model="password"
-          placeholder="Password"
-          class="p-2"
-          :feedback="false"
-          toggleMask
+            v-model="password"
+            placeholder="Password"
+            class="p-2"
+            :feedback="false"
+            toggleMask
         />
       </InputGroup>
       <span v-if="error.password" class="text-red-500">{{
-        error.password
-      }}</span>
+          error.password
+        }}</span>
       <button type="submit" class="btn-primary">Login</button>
       <router-link to="/register" class="btn-secondary">
         Registrate
@@ -67,12 +67,14 @@ const handleSubmit = () => {
       router.push('/home');
     }, 1000);
   } else {
-    toast.add({
-      severity: 'error',
-      summary: 'Error',
-      detail: 'Please fill in all fields correctly.',
-      life: 3000,
-    });
+    if (toast) {
+      toast.add({
+        severity: 'error',
+        summary: 'Error',
+        detail: 'Please fill in all fields correctly.',
+        life: 3000,
+      });
+    }
   }
 };
 

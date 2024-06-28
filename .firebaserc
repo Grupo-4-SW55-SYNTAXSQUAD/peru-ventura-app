@@ -1,5 +1,9 @@
 {
   "projects": {
-    "default": "peruventura-app"
-  }
+    "default": "peruventura-app-test",
+    "peruventura-app-test": "peruventura-app-test"
+  },
+  "targets": {},
+  "etags": {},
+  "dataconnectEmulatorConfig": {}
 }
